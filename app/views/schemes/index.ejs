@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="span12">
+        <p><%- link_to('<i class="icon-plus icon-white"></i> Add', path_to.new_scheme(), {class: 'btn btn-primary'}) %></>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <% if (schemes.length > 0) { %>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>URL</th>
+                        <th>Stars</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% schemes.forEach(function (scheme) { %>
+                        <tr>
+                            <td><strong><%- link_to(scheme.name, path_to.scheme(scheme)) %></strong></td>
+                            <td><strong><%- link_to(scheme.url, scheme.url) %></strong></td>
+                            <td><strong><%- link_to(scheme.stars, scheme.stars) %></strong></td>
+                            <td>
+                                <%- link_to('<i class="icon-edit"></i> Edit', path_to.edit_scheme(scheme), {class: 'btn btn-mini'}) %>
+                                <%- link_to('<i class="icon-remove icon-white"></i> Delete', path_to.scheme(scheme), {class: 'btn btn-mini btn-danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'}) %>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p class="alert alert-block alert-info">
+                <strong>No schemes were found.</strong>
+            </p>
+        <% } %>
+    </div>
+</div>

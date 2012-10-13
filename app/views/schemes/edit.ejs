@@ -1,0 +1,9 @@
+<div class="page-header"><h1>Edit scheme</h1></div>
+
+<% form_for(scheme, {action: path_to.scheme(scheme), method: 'PUT', id: "scheme_form", class: 'form-horizontal'}, function (form) { %>
+    <%- partial('schemes/form.ejs', {locals: {form: form, scheme: scheme}}) %>
+    <div class="form-actions">
+        <%- form.submit('<i class="icon-ok icon-white"></i> Update scheme', {class: 'btn btn-primary'}) %> or
+        <%- link_to('Cancel', path_to.scheme(scheme), {class: 'btn'}) %>
+    </div>
+<% });%>
