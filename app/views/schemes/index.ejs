@@ -12,8 +12,8 @@
                     <tr>
                         <th>Name</th>
                         <th>URL</th>
-                        <th>Stars</th>
-                        <th>Actions</th>
+                        <th>Stargazers</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,7 +21,9 @@
                         <tr>
                             <td><strong><%- link_to(scheme.name, path_to.scheme(scheme)) %></strong></td>
                             <td><strong><%- link_to(scheme.url, scheme.url) %></strong></td>
-                            <td><strong><%- link_to(scheme.stars, scheme.stars) %></strong></td>
+                            <td>
+                                <iframe src="http://ghbtns.com/github-btn.html?user=markdotto&repo=github-buttons&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+                            </td>
                             <td>
                                 <%- link_to('<i class="icon-edit"></i> Edit', path_to.edit_scheme(scheme), {class: 'btn btn-mini'}) %>
                                 <%- link_to('<i class="icon-remove icon-white"></i> Delete', path_to.scheme(scheme), {class: 'btn btn-mini btn-danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'}) %>

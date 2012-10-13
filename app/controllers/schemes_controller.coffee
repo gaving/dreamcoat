@@ -28,8 +28,19 @@ action 'create', ->
 action 'index', ->
     Scheme.all (err, schemes) =>
         @schemes = schemes
-        @title = 'Schemes index'
-        render()
+        if req.params.format == 'json'
+            send @schemes
+        else
+            @title = 'Schemes index'
+            render()
+
+action 'find', ->
+    Scheme.all where: name: params.id, (err, scheme) =>
+        if err
+            send err
+        else
+            send scheme.pop()
+            next()
 
 action 'show', ->
     @title = 'Scheme show'

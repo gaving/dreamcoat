@@ -1,5 +1,14 @@
 development:
-  driver: "memory"
+  driver:   "mongoose"
+  host:     "localhost"
+  database: "DREAMCOAT-dev"
 
 test:
-  driver: "memory"
+  driver:   "mongoose"
+  host:     "localhost"
+  database: "DREAMCOAT-test"
+
+production:
+  driver:   "mongoose"
+  host:     "localhost"
+  database: "DREAMCOAT-production"
