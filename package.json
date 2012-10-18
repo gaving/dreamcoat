@@ -1,7 +1,10 @@
 { "name": "dreamcoat"
 , "version": "0.0.1"
-, "engines": ["node >= 0.4.0"]
-, "main": "server.js"
+, "engines":
+  { "node": "0.8.x"
+  , "npm": "1.1.x"
+  },
+  "main": "server.js"
 , "dependencies":
   { "ejs":              "*"
   , "ejs-ext":          "*"
